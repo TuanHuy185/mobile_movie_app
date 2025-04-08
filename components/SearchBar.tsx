@@ -1,36 +1,19 @@
-import { StyleSheet, TextInput, View } from 'react-native';
+import { TextInput, View, Image } from 'react-native';
 import React from 'react';
+import { icons } from '@/constants/icons';
 
 const SearchBar = () => {
-  const [searchText, setSearchText] = React.useState('');
-
   return (
-    <View style={styles.container}>
+    <View className="flex-row items-center bg-drak-200 rounded-full px-5 py-4">
+      <Image source={icons.search} className='size-5' resizeMode='contain' tintColor="#ab8bff"/>
       <TextInput
-        style={styles.input}
+        onPress={() => {}}
         placeholder="Search"
-        value={searchText}
-        onChangeText={(text) => setSearchText(text)}
+        value=''
+        onChangeText={() => {}}
       />
     </View>
   );
 };
 
 export default SearchBar;
-
-const styles = StyleSheet.create({
-  container: {
-    // Add styles for the container
-    padding: 10,
-    backgroundColor: '#f0f0f0',
-    borderRadius: 10,
-  },
-  input: {
-    // Add styles for the TextInput
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-  },
-});
