@@ -3,11 +3,13 @@ import React from "react";
 import { icons } from "@/constants/icons";
 
 interface Props {
-  placeholader: string;
+  placeholder: string;
   onPress?: () => void;
+  value?: string;
+  onChangeText?: (text: string) => void;
 }
 
-const SearchBar = ({ placeholader, onPress }: Props) => {
+const SearchBar = ({ placeholder , onPress, value, onChangeText }: Props) => {
   return (
     <View className="flex-row items-center bg-drak-200 rounded-full px-5 py-4">
       <Image
@@ -18,9 +20,9 @@ const SearchBar = ({ placeholader, onPress }: Props) => {
       />
       <TextInput
         onPress={onPress}
-        placeholder={placeholader}
-        value=""
-        onChangeText={() => {}}
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChangeText}
         placeholderTextColor={"#a8b5db"}
         className="flex-1 ml-2 text-white"
       />
